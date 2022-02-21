@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { IntervalTimerComponent } from './interval-timer/interval-timer.component';
+import { ShareReplayComponent } from './share-replay/share-replay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntervalTimerComponent
+    IntervalTimerComponent,
+    ShareReplayComponent
   ],
   imports: [
     BrowserModule
