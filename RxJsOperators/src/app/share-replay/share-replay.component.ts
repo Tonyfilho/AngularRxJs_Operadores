@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ShareService } from './share.service';
 
@@ -7,7 +7,7 @@ import { ShareService } from './share.service';
   templateUrl: './share-replay.component.html',
  
 })
-export class ShareReplayComponent implements OnInit {
+export class ShareReplayComponent implements OnInit, OnDestroy {
   somente1$!: Subscription;
   somente1Dnovo$!: Subscription;
   /**
@@ -20,10 +20,14 @@ export class ShareReplayComponent implements OnInit {
   constructor(private localService: ShareService) { }
 
   ngOnInit(): void {
-   this.localService.getUm().subscribe(data => console.log(data));
-   this.localService.getUm().subscribe(data2 => console.log(data2));
+  this.somente1$ =  this.localService.getUm().subscribe(data => console.log(data));
+  this.somente1Dnovo$ =this.localService.getUm().subscribe(data => console.log(data));
   
     
+  }
+  ngOnDestroy(): void {
+      this.somente1$.unsubscribe();
+      this.somente1Dnovo$.unsubscribe();
   }
 
 

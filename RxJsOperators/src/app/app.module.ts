@@ -6,9 +6,10 @@ import { IntervalTimerComponent } from './interval-timer/interval-timer.componen
 import { ShareReplayComponent } from './share-replay/share-replay.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ForkJoinAndZipOperatorsComponent } from './fork-join-and-zip-operators/fork-join-and-zip-operators.component';
 
 @NgModule({
-  declarations: [AppComponent, IntervalTimerComponent, ShareReplayComponent],
+  declarations: [AppComponent, IntervalTimerComponent, ShareReplayComponent, ForkJoinAndZipOperatorsComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
